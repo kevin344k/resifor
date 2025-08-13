@@ -1,21 +1,116 @@
-import { useState } from 'react'
-import logo from "/logo.jpeg"
-import './App.css'
-
+import { useState } from "react";
+import logo from "/logo.jpeg";
+import "./App.css";
+import AutoSnapSlider from "./components/AutoSnapSlider";
+import ModalSlider from "./components/ModalSlider";
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
+  const baseURL = import.meta.env.BASE_URL;
+
+  const images = [
+    `${baseURL}imagenes-resina/img1.jpeg`,
+    `${baseURL}imagenes-resina/img2.jpeg`,
+    `${baseURL}imagenes-resina/img3.jpeg`,
+    `${baseURL}imagenes-resina/img4.jpeg`,
+    `${baseURL}imagenes-resina/img5.jpeg`,
+    `${baseURL}imagenes-resina/img6.jpeg`,
+    `${baseURL}imagenes-resina/img7.jpeg`,
+    `${baseURL}imagenes-resina/img8.jpeg`,
+    `${baseURL}imagenes-resina/img9.jpeg`,
+    `${baseURL}imagenes-resina/img10.jpeg`,
+    `${baseURL}imagenes-resina/img11.jpeg`,
+    `${baseURL}imagenes-resina/img12.jpeg`,
+    `${baseURL}imagenes-resina/img13.jpeg`,
+    `${baseURL}imagenes-resina/img14.jpeg`,
+    `${baseURL}imagenes-resina/img15.jpeg`,
+    `${baseURL}imagenes-resina/img16.jpeg`,
+    `${baseURL}imagenes-resina/img17.jpeg`,
+    `${baseURL}imagenes-resina/img18.jpeg`,
+    `${baseURL}imagenes-resina/img19.jpeg`,
+    `${baseURL}imagenes-resina/img20.jpeg`,
+    `${baseURL}imagenes-resina/img21.jpeg`,
+    `${baseURL}imagenes-resina/img22.jpeg`,
+    `${baseURL}imagenes-resina/img23.jpeg`,
+    `${baseURL}imagenes-resina/img24.jpeg`,
+    `${baseURL}imagenes-resina/img25.jpeg`,
+    `${baseURL}imagenes-resina/img26.jpeg`,
+    `${baseURL}imagenes-resina/img27.jpeg`,
+    `${baseURL}imagenes-resina/img28.jpeg`,
+    `${baseURL}imagenes-resina/img29.jpeg`,
+    `${baseURL}imagenes-resina/img30.jpeg`,
+    `${baseURL}imagenes-resina/img31.jpeg`,
+    `${baseURL}imagenes-resina/img32.jpeg`,
+    `${baseURL}imagenes-resina/img33.jpeg`,
+    `${baseURL}imagenes-resina/img34.jpeg`,
+    `${baseURL}imagenes-resina/img35.jpeg`,
+  ];
+  const recibirDato = (valor) => {
+    setIsOpen(false);
+  };
 
   return (
-    <>
-<nav className="flex w-full px-12 items-center justify-between 
-  bg-white/30 backdrop-blur-md border border-white/20 rounded-xl shadow-lg">
-       
-  <img className="rounded-full size-12" src={logo} alt="logo" />
-  <p className="text-white font-medium">Pedir</p>
-</nav>
-
-    </>
-  )
+    <div className="bg-gradient-to-tr from-indigo-600  to-purple-500 min-h-screen px-4 py-3">
+      <nav
+        className="flex w-full px-4 py-2 items-center justify-center 
+  bg-white/20 backdrop-blur-md border border-white/20 rounded-full shadow-lg"
+      >
+        <img className="rounded-full size-12 mr-auto" src={logo} alt="logo" />
+        <p className="text-white text-xl font-medium mr-auto font-fm-fascinate">
+          Letras en Resina
+        </p>
+      </nav>
+      {/*hero */}
+      <section className="py-8">
+        <div className="relative ">
+          <img
+            src={logo}
+            className="w-full h-full  inset-0 rounded-lg shadow-lg"
+            alt=""
+          />
+          <div className="absolute inset-0  flex  items-end pb-4 gap-2 justify-center">
+            <a
+              className=" text-center font-fm-fascinate text-white p-3 px-5  bg-gradient-to-tr from-purple-600  to-purple-500 backdrop-blur-md border  rounded-full tracking-widest shadow-md"
+              href=""
+            >
+              Pedir
+            </a>
+            <button
+              onClick={() => setIsOpen(true)}
+              className=" font-fm-fascinate text-white p-3 px-5  bg-gradient-to-l from-purple-600  to-purple-500 backdrop-blur-md border  rounded-full tracking-widest shadow-md"
+            >
+              Ver diseños
+            </button>
+          </div>
+        </div>
+        <div
+          className="w-full px-4 py-2 mt-4 items-center justify-center 
+  bg-white/20 backdrop-blur-md border border-white/20  shadow-lg"
+        >
+          <p className="text-white font-bold">
+            Personaliza tu inicial con colores, brillos y detalles únicos. Un
+            regalo perfecto y diferente.
+          </p>
+        </div>
+      </section>
+      <div className="flex flex-col gap-8">
+        <AutoSnapSlider
+          directionSlider={"right"}
+          images={images}
+        ></AutoSnapSlider>
+        <AutoSnapSlider
+          directionSlider={"left"}
+          images={images}
+        ></AutoSnapSlider>
+      </div>
+      {isOpen && (
+        <ModalSlider
+          isOpen={isOpen}
+          images={images}
+          recibirDato={recibirDato}
+        ></ModalSlider>
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
