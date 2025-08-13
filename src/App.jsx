@@ -3,6 +3,7 @@ import logo from "/logo.jpeg";
 import "./App.css";
 import AutoSnapSlider from "./components/AutoSnapSlider";
 import ModalSlider from "./components/ModalSlider";
+import wasap from "/wasap.svg"
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const baseURL = import.meta.env.BASE_URL;
@@ -69,10 +70,10 @@ function App() {
           />
           <div className="absolute inset-0  flex  items-end pb-4 gap-2 justify-center">
             <a
-              className=" text-center font-fm-fascinate text-white p-3 px-5  bg-gradient-to-tr from-purple-600  to-purple-500 backdrop-blur-md border  rounded-full tracking-widest shadow-md"
+              className="flex gap-2 text-center font-fm-fascinate text-white p-3 px-5  bg-gradient-to-tr from-purple-600  to-purple-500 backdrop-blur-md border  rounded-full tracking-widest shadow-md"
               href=""
             >
-              Pedir
+              <p>Pedir</p> <img className="w-6" src={wasap} alt="" />
             </a>
             <button
               onClick={() => setIsOpen(true)}
@@ -92,6 +93,7 @@ function App() {
           </p>
         </div>
       </section>
+
       <div className="flex flex-col gap-8">
         <AutoSnapSlider
           directionSlider={"right"}
@@ -102,6 +104,11 @@ function App() {
           images={images}
         ></AutoSnapSlider>
       </div>
+
+            <footer className="w-full text-center pt-15">
+              <p className="text-xs text-neutral-400">Sitio web desarrollado por <a className="text-yellow-500 underline" href="https://kevin344k.github.io/portfolio_kevin_webdeveloper/">kevin344k</a></p>
+
+      </footer>
       {isOpen && (
         <ModalSlider
           isOpen={isOpen}
