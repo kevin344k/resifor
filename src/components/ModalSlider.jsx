@@ -1,5 +1,5 @@
 import React, { useState, useRef,useEffect } from "react";
-
+import ImagenSuave from "./ImagenSuave";
 export default function ModalSlider({ isOpen, images,recibirDato }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const thumbRef = useRef(null);
@@ -47,7 +47,7 @@ export default function ModalSlider({ isOpen, images,recibirDato }) {
                 &#10094;
               </button>
 
-              <img
+              <ImagenSuave
                 src={images[currentIndex]}
                 alt={`img-${currentIndex}`}
                 className="max-h-[70vh] object-contain rounded-lg"
@@ -81,6 +81,7 @@ export default function ModalSlider({ isOpen, images,recibirDato }) {
                     <img
                       key={idx}
                       src={src}
+                      loading="lazy"
                       alt={`thumb-${idx}`}
                       ref={idx === currentIndex ? thumbRefItem : null} // solo la activa
                       onClick={() => setCurrentIndex(idx)}

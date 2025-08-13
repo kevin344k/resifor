@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-
+import ImagenSuave from "./ImagenSuave";
 
 
 
@@ -55,7 +55,7 @@ export default function AutoSnapSlider({directionSlider,images}) {
             key={i}
             className="flex-shrink-0 w-fit h-40 p-2"
           >
-            <img
+            <ImagenSuave
               src={src}
               alt=""
               className="w-full h-full object-contain rounded-lg"

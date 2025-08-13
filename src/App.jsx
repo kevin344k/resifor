@@ -4,6 +4,7 @@ import "./App.css";
 import AutoSnapSlider from "./components/AutoSnapSlider";
 import ModalSlider from "./components/ModalSlider";
 import wasap from "/wasap.svg"
+import ImagenSuave from "./components/ImagenSuave";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const baseURL = import.meta.env.BASE_URL;
@@ -63,7 +64,8 @@ function App() {
       {/*hero */}
       <section className="py-8">
         <div className="relative ">
-          <img
+          
+          <ImagenSuave
             src={logo}
             className="w-full h-full  inset-0 rounded-lg shadow-lg"
             alt=""
