@@ -39,7 +39,7 @@ export default function ModalSlider({ isOpen, images,recibirDato }) {
             </button>
 
             {/* Slider principal */}
-            <div className="relative flex items-center justify-center">
+            <div className="relative flex items-center justify-center md:max-w-[400px] sm:h-[400px] md:mx-auto lg:h-[650px]">
               <button
                 onClick={prevSlide}
                 className="absolute left-2 bg-black/50 text-white p-2 rounded-full hover:bg-black/80"
@@ -50,7 +50,7 @@ export default function ModalSlider({ isOpen, images,recibirDato }) {
               <ImagenSuave
                 src={images[currentIndex]}
                 alt={`img-${currentIndex}`}
-                className="max-h-[70vh] object-contain rounded-lg"
+               
               />
 
               <button
