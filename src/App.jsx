@@ -6,7 +6,7 @@ import ModalSlider from "./components/ModalSlider";
 import wasap from "/wasap.svg";
 import ImagenSuave from "./components/ImagenSuave";
 import Typewriter from "./components/Typewriter";
-import AutoSnapSliderDesktop from "./components/AutoSliderdesktop";
+import AutoSnapSliderDesktop from "./components/AutoSliderDesktop";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const baseURL = import.meta.env.BASE_URL;
